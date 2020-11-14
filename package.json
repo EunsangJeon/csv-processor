@@ -1,0 +1,21 @@
+{
+  "name": "csv-processor",
+  "version": "1.0.0",
+  "description": "TypeScript Exercise",
+  "main": "index.ts",
+  "scripts": {
+    "dev:build": "tsc -w",
+    "dev:start": "nodemon build/index.js",
+    "dev": "concurrently npm:dev:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EunsangJeon/csv-processor.git"
+  },
+  "author": "Eunsang Jeon",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
