@@ -1,7 +1,6 @@
 import { CsvFileReader } from './CsvFileReader';
 import { MatchReader } from './MatchReader';
 import { ConsoleReport } from './reportTargets/ConsoleReport';
-import { HtmlReport } from './reportTargets/HtmlReport';
 import { Summary } from './Summary';
 import { WinsAnalysis } from './analyzers/WinsAnalysis';
 
@@ -16,5 +15,7 @@ const consoleSummary = new Summary(
 );
 consoleSummary.buildAndPrintReport(matchReader.matches);
 
-const htmlSummary = new Summary(new WinsAnalysis('Arsenal'), new HtmlReport());
-htmlSummary.buildAndPrintReport(matchReader.matches);
+const matchReaderFromCsv = MatchReader.fromCsv('resources/football.csv');
+const htmlSummary = Summary.winsAnalysisWithHtmlReport('Arsenal');
+matchReaderFromCsv.load();
+htmlSummary.buildAndPrintReport(matchReaderFromCsv.matches);
