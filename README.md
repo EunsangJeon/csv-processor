@@ -4,6 +4,6 @@
 
 TypeScript Exercise
 
-### take away
+### Take away
 
 Favor object composition over class inheritance.
